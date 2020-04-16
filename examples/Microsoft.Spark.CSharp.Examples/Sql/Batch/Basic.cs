@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using Microsoft.Spark.Sql;
 using Microsoft.Spark.Sql.Types;
 using static Microsoft.Spark.Sql.Functions;
-using Microsoft.Spark.Extensions.Azure.Synapse.Analytics.Utils;
+//using Microsoft.Spark.Extensions.Azure.Synapse.Analytics.Utils;
+using Microsoft.Spark;
 
 namespace Microsoft.Spark.Examples.Sql.Batch
 {
