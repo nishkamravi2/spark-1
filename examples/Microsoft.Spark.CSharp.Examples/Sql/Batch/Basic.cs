@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Microsoft.Spark.Sql;
 using Microsoft.Spark.Sql.Types;
 using static Microsoft.Spark.Sql.Functions;
+using Microsoft.Spark.Extensions.Azure.Synapse.Analytics.Utils;
 
 namespace Microsoft.Spark.Examples.Sql.Batch
 {
@@ -29,6 +30,10 @@ namespace Microsoft.Spark.Examples.Sql.Batch
                 .AppName(".NET Spark SQL basic example")
                 .Config("spark.some.config.option", "some-value")
                 .GetOrCreate();
+
+
+            string connectionString = TokenLibrary.getConnectionString("dummyLinkedService");
+            Console.WriteLine("Connection string: {0}", connectionString);
 
             // Need to explicitly specify the schema since pickling vs. arrow formatting
             // will return different types. Pickling will turn longs into ints if the values fit.
